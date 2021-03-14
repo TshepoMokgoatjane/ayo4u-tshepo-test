@@ -17,6 +17,9 @@ public class ConversionServiceImpl implements ConversionService {
 	private static final double MILLILITERS_TO_LITERS = 0.001;
 	private static final double LITERS_TO_MILLILITERS = 1000;
 	
+	private static final double KILOMETERS_PER_HOUR_TO_MILES_PER_HOUR = 0.6213711922;
+	private static final double MILES_PER_HOUR_TO_KILOMETERS_PER_HOUR = 1.609;
+	
 	private static final double CELSIUS_TO_FAHRENHEIT = 1.8;
 	private static final double FAHRENHEIT_TO_CELSIUS = 1.8;
 	private static final double TEMPERATURE = 32;
@@ -26,21 +29,40 @@ public class ConversionServiceImpl implements ConversionService {
 		
 		if(Unit.valueOf(request.getFromUnit()).equals(Unit.KILOMETER) && Unit.valueOf(request.getToUnit()).equals(Unit.METER)) {
 			return convertKilometersToMeters(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.METER) && Unit.valueOf(request.getToUnit()).equals(Unit.KILOMETER)) {
+		} 		
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.METER) && Unit.valueOf(request.getToUnit()).equals(Unit.KILOMETER)) {
 			return convertMetersToKilometers(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.GRAMS) && Unit.valueOf(request.getToUnit()).equals(Unit.KILOGRAM)) {
+		} 
+		
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.GRAMS) && Unit.valueOf(request.getToUnit()).equals(Unit.KILOGRAM)) {
 			return convertGramsToKilograms(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.KILOGRAM) && Unit.valueOf(request.getToUnit()).equals(Unit.GRAMS)) {
+		} 
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.KILOGRAM) && Unit.valueOf(request.getToUnit()).equals(Unit.GRAMS)) {
 			return convertKilogramsToGrams(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.MILLILITER) && Unit.valueOf(request.getToUnit()).equals(Unit.LITER)) {
+		} 
+		
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.MILLILITER) && Unit.valueOf(request.getToUnit()).equals(Unit.LITER)) {
 			return convertMillilitersToLiters(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.LITER) && Unit.valueOf(request.getToUnit()).equals(Unit.MILLILITER)) {
+		} 
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.LITER) && Unit.valueOf(request.getToUnit()).equals(Unit.MILLILITER)) {
 			return convertLitersToMilliliters(request.getValue());
-		}  else if(Unit.valueOf(request.getFromUnit()).equals(Unit.CELSIUS) && Unit.valueOf(request.getToUnit()).equals(Unit.FAHRENHEIT)) {
+		}  
+		
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.CELSIUS) && Unit.valueOf(request.getToUnit()).equals(Unit.FAHRENHEIT)) {
 			return convertCelsiusToFahrenheit(request.getValue());
-		} else if(Unit.valueOf(request.getFromUnit()).equals(Unit.FAHRENHEIT) && Unit.valueOf(request.getToUnit()).equals(Unit.CELSIUS)) {
+		} 
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.FAHRENHEIT) && Unit.valueOf(request.getToUnit()).equals(Unit.CELSIUS)) {
 			return convertFahrenheitToCelsius(request.getValue());
-		}else {
+		}
+		
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.KILOMETERS_PER_HOUR) && Unit.valueOf(request.getToUnit()).equals(Unit.MILES_PER_HOUR)) {
+			return convertKilometersPerHourToMilesPerHour(request.getValue());
+		} 
+		else if(Unit.valueOf(request.getFromUnit()).equals(Unit.MILES_PER_HOUR) && Unit.valueOf(request.getToUnit()).equals(Unit.KILOMETERS_PER_HOUR)) {
+			return convertMilesPerHourToKilometersPerHour(request.getValue());
+		}
+		
+		else {
 			throw new IllegalArgumentException("Invalid Conversion Request!");
 		}		
 	}
@@ -75,5 +97,13 @@ public class ConversionServiceImpl implements ConversionService {
 
 	private double convertFahrenheitToCelsius(double input) {		
 		return (input - TEMPERATURE) / FAHRENHEIT_TO_CELSIUS;
+	}
+	
+	private double convertKilometersPerHourToMilesPerHour(double input) {		
+		return input * KILOMETERS_PER_HOUR_TO_MILES_PER_HOUR;
+	}
+
+	private double convertMilesPerHourToKilometersPerHour(double input) {		
+		return input * MILES_PER_HOUR_TO_KILOMETERS_PER_HOUR;
 	}
 }

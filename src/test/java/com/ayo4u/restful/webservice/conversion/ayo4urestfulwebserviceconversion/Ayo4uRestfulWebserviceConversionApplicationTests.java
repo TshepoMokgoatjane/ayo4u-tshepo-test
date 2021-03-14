@@ -9,6 +9,4 @@ class Ayo4uRestfulWebserviceConversionApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
-	
 }
