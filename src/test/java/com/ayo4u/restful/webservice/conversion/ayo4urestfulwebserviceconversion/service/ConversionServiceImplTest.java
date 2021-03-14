@@ -3,6 +3,7 @@ package com.ayo4u.restful.webservice.conversion.ayo4urestfulwebserviceconversion
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,6 +19,7 @@ public class ConversionServiceImplTest {
 	
 		
 	@Test
+	@DisplayName("Test should pass when we convert from 500 Meters to Kilometers with expected results being 5")
 	void testConvertMetersToKilometers() {
 		// Setup fixtures and expectations
 		double meters = 5000;		
@@ -31,6 +33,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should fail in the event that the conversion metrics don't match up or align")
 	void testDoConversionThrowsException() {
 		// Setup fixtures and expectations
 		double meters = 5000;
@@ -40,6 +43,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the converted 5000 kilometers to meters is 5mil")
 	void testConvertKilometersToMeters() {
 		// Setup fixtures and expectations
 		double kilometers = 5000;		
@@ -53,6 +57,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the 500 grams to kilograms returns 5")
 	void testConvertGramsToKilograms() {
 		// Setup fixtures and expectations
 		double grams = 5000;		
@@ -66,6 +71,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the converted from 5000 kilogram to grams returns 5mil")
 	void testConvertKilogramsToGrams() {
 		// Setup fixtures and expectations
 		double kilograms = 5000;		
@@ -79,6 +85,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("The Test should pass in the event that the converted 5000 milliliters to liters is 5")
 	void testConvertMillilitersToLiters() {
 		// Setup fixtures and expectations
 		double milliliters = 5000;		
@@ -92,6 +99,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("The Test should pass when the liters converted to milliliters is equal to 5mil")
 	void testConvertLitersToMilliliter() {
 		// Setup fixtures and expectations
 		double liters = 5000;		
@@ -105,6 +113,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the Celsius converted to Fahrenheit is equal to 209.48")
 	void testConvertCelsiusToFahrenheit() {
 		// Setup fixtures and expectations
 		double celsius = 98.6;		
@@ -118,6 +127,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the converted Fahrenheit to Celsius is as per expected result: 37 rounded off")
 	void testConvertFahrenheitToCelsius() {
 		// Setup fixtures and expectations
 		double fahrenheit = 98.6;		
@@ -131,6 +141,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the converted kilometers per hour to miles per hour is as per the expected results: 93.2")
 	void testConvertKilometersPerHourToMilesPerHour() {
 		// Setup fixtures and expectations
 		double kilometersPerHour = 150;		
@@ -144,6 +155,7 @@ public class ConversionServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Test should pass when the converted miles per hour to kilometers per hour is equal to 241.35")
 	void testConvertMilesPerHourToKilometersPerHour() {
 		// Setup fixtures and expectations
 		double milesPerHour = 150;		
