@@ -36,6 +36,7 @@ public class ConversionControllerIntegrationTest {
 	}
 	
 	@Test
+	@DisplayName("Test Conversion Metrics")
 	void testConvertMetrics() throws Exception {
 		
 		ObjectMapper objectMapper = new ObjectMapper();

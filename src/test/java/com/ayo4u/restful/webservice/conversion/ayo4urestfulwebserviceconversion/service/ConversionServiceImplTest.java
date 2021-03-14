@@ -40,6 +40,14 @@ public class ConversionServiceImplTest {
 		
 		// SUT-- Verify behavior
 		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "CELCIUS", meters)));
+		
+		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "GRAMS", meters)));
+
+		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "MILES_PER_HOUR", meters)));
+
+		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "KILOMETERS_PER_HOUR", meters)));
+
+		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "FAHRENHEIT", meters)));
 	}
 	
 	@Test
