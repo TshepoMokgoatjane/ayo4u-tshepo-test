@@ -8,7 +8,7 @@ Built a Spring Boot Application using Restful APIs to do conversions for aYo
 
 ## Contributors
 
-- Tshepo Mokgoatjane <tltmokgoatjanen@gmail.com>
+- Tshepo Mokgoatjane <tltmokgoatjane@gmail.com>
 
 ---
 
