@@ -9,7 +9,7 @@ Built a Spring Boot Application using Restful APIs to do metric to imperial and 
 ```
 <p>Endpoint</p>
 URI: POST -> http://localhost:8080/api/v1/convert-metric
-HTTP: 200
+HTTP Status: 200
 Time: 93 ms
 
 HEADER:
