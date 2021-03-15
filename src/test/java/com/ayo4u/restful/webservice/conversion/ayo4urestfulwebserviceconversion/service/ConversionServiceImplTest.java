@@ -48,6 +48,8 @@ public class ConversionServiceImplTest {
 		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "KILOMETERS_PER_HOUR", meters)));
 
 		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "FAHRENHEIT", meters)));
+		
+		assertThrows(IllegalArgumentException.class, ()->conversionService.doConversion(new ConversionModel("METER", "LITER", meters)));
 	}
 	
 	@Test
